@@ -13,9 +13,9 @@ if (!defined('NV_MAINFILE'))
 
 $module_version = array(
     'name' => 'Donations',
-    'modfuncs' => 'main,detail,search,list',
+    "modfuncs" => "main,pay,complete,money,exchange,historyexchange,recharge",
     'change_alias' => 'main,detail,search,list',
-    'submenu' => 'main,detail,search,list',
+    "submenu" => "main,money,exchange,historyexchange",
     'is_sysmod' => 0,
     'virtual' => 1,
     'version' => '4.3.03',

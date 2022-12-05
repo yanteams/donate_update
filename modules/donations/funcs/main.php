@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @Project NUKEVIET 4.x
  * @Author YAN <admin@yansupport.com>
@@ -7,203 +6,84 @@
  * @License: Not free read more http://nukeviet.vn/vi/store/modules/nvtools/
  * @Createdate Mon, 05 Dec 2022 11:04:36 GMT
  */
-if( ! defined( 'NV_IS_MOD_DONATIONS' ) ) die( 'Stop!!!' );
 
-$page_title = $module_info['custom_title'];
-
-$xtpl = new XTemplate( "main.tpl", NV_ROOTDIR . "/themes/" . $module_info['template'] . "/modules/" . $module_file );
-$xtpl->assign( 'LANG', $lang_module );
-
-
-	
-$notice = "";
-$thongke = "";
-$key = "";
-    $result = $db->query( "SELECT config_name, config_value FROM " . NV_CONFIG_GLOBALTABLE . " WHERE lang='".NV_LANG_DATA."' AND module='".$module_data."'" );
-	$module_config = array();
-	while( list( $c_config_name, $c_config_value ) = $result->fetch( 3 ) )
-	{
-		$module_config[$c_config_name] = $c_config_value;
-	}
-//Lay danh sach cac don vi
-$madvi = $nv_Request->get_int( 'madvi', 'post,get', '' );
-$dv = 0;
-$donvi = getDonvi();
-foreach($donvi as $list_dv)
-{
-    $xtpl->assign('LIST_DV', $list_dv);
-    $xtpl->assign('SELECT', $list_dv['madvi'] == $madvi ? "selected=\"selected\"" : "");
-    //dem so luong don vi hien co
-    $dv ++;
-    $xtpl->parse( 'main.dv' );
+if (!defined('NV_IS_MOD_DONATION')) {
+    die('Stop!!!');
 }
 
-$page = $nv_Request->get_int('page', 'get', 0 );
+$page_title = $module_info['site_title'];
+$key_words = $module_info['keywords'];
 
-//Bat tat tim kiem
-if( $module_config['search'] == 1 )
-{
-    if ( $nv_Request->isset_request( 'sub_search', 'post' ) )
-    {
-        $key =  $nv_Request->get_string('key', 'post','');
+$url_checkout = [];
+
+// Nạp đúng số tiền nào đó
+$pay_amount = $nv_Request->get_title('amount', 'get', '');
+$pay_info = nv_substr($nv_Request->get_title('info', 'get', ''), 0, 250);
+$pay_money = '';
+if (preg_match('/^([0-9\.]+)\-([A-Z]{3})$/', $pay_amount, $m)) {
+    if (!isset($global_array_money_sys[$m[2]])) {
+        $pay_amount = '';
+    } else {
+        $pay_money = $m[2];
     }
-    else
-    {
-        $key = $nv_Request->get_string ('key', 'get','');
-    }
-    if($page == 0)
-    {
-        $xtpl->parse( 'main.search' );
-    }
+} else {
+    $pay_amount = '';
 }
 
-if($madvi == 0)
-{
-    $sql = "FROM " . NV_PREFIXLANG . "_" . $module_data . " WHERE 1=1 AND hoten like '%" . $key . "%'";
-    $base_url = NV_BASE_SITEURL . "index.php?" . NV_LANG_VARIABLE . "=" . NV_LANG_DATA . "&amp;" . NV_NAME_VARIABLE . "=" . $module_name;        
-}
-else
-{
-    $sql = "FROM " . NV_PREFIXLANG . "_" . $module_data . " WHERE madvi = " . $madvi . "";
-    $base_url = NV_BASE_SITEURL . "index.php?" . NV_LANG_VARIABLE . "=" . NV_LANG_DATA . "&amp;" . NV_NAME_VARIABLE . "=" . $module_name . "&amp;madvi=" . $madvi;        
-}
+foreach ($global_array_payments as $row) {
+    $row['currency_support'] = explode(',', $row['currency_support']);
+    if (file_exists(NV_ROOTDIR . "/modules/" . $module_file . "/payment/" . $row['payment'] . ".checkout_url.php") and (empty($pay_amount) or !empty($row['allowedoptionalmoney'])) and (empty($pay_money) or in_array($pay_money, $row['currency_support']))) {
+        $payment_config = unserialize(nv_base64_decode($row['config']));
+        $payment_config['paymentname'] = $row['paymentname'];
+        $payment_config['domain'] = $row['domain'];
 
-if($key != "")
-{
-    $base_url = NV_BASE_SITEURL . "index.php?" . NV_LANG_VARIABLE . "=" . NV_LANG_DATA . "&amp;" 
-                . NV_NAME_VARIABLE . "=" . $module_name . "&amp;key=" . $key . "";
-}
-
-$sql1 = "SELECT * " . $sql;
-
-$result1 = $db->query( $sql1 ); 
-
-
-$all_page  = $result1->rowCount();
-
-if($madvi == 0)
-{
-    $sql2 = "SELECT cb.id, cb.hoten, cb.ngsinh, cb.gtinh, cb.avt, cb.diachi, cb.email, dv.tendonvi, cv.tenchucvu FROM " 
-       . NV_PREFIXLANG . "_" . $module_data .
-       " cb INNER JOIN " . NV_PREFIXLANG . "_" . $module_data . "_donvi dv
-       INNER JOIN " . NV_PREFIXLANG . "_" . $module_data . "_chucvu cv                  
-       ON cb.madvi = dv.madvi AND cb.macvu1 = cv.macvu WHERE 1 = 1 AND cb.hoten like '%" . $key . "%' LIMIT " . $page . ", " . $module_config['per_page'] . "";
-}
-else
-{
-    $sql2 = "SELECT cb.id, cb.hoten, cb.ngsinh, cb.gtinh, cb.avt, cb.diachi, cb.email, dv.tendonvi, cv.tenchucvu FROM " 
-       . NV_PREFIXLANG . "_" . $module_data .
-       " cb INNER JOIN " . NV_PREFIXLANG . "_" . $module_data . "_donvi dv
-       INNER JOIN " . NV_PREFIXLANG . "_" . $module_data . "_chucvu cv                  
-       ON cb.madvi = dv.madvi AND cb.macvu1 = cv.macvu WHERE cb.madvi = " . $madvi . " LIMIT " . $page . ", " . $module_config['per_page'];
-}
-$query2 = $db->query( $sql2 );
-$data = array();
-
-while ( $row = $query2->fetch() )
-{
-        $row['gtinh'] == 1 ? $row['gtinh'] = $lang_module['female'] : $row['gtinh'] = $lang_module['male'];
-        
-        $data[] = array(
-        "id" => $row['id'],
-        "hoten" => $row['hoten'],
-        "ngsinh" => $row['ngsinh'],
-        "gtinh" => $row['gtinh'],
-        "avt" => $row['avt'],
-        "diachi" => $row['diachi'],
-        "email" => $row['email'],
-        "tendonvi" => $row['tendonvi'],
-        "tenchucvu" => $row['tenchucvu']
-        );
-    if($madvi != 0)
-    {
-        $notice = $lang_module['notice_donvi'] . "\"" .$row['tendonvi'] . "\"";
-        $thongke = sprintf($lang_module['thongke_dv'], $all_page, $row['tendonvi']);
-    }    
-    else
-    {        
-        if($key == "")
-        {
-            $f = 0;
-            $thongke = sprintf($lang_module['thongke'], $all_page, $dv);
-            //Lay noi dung thong bao
-            $bodytext = "";
-            $content_file = NV_ROOTDIR . '/' . NV_DATADIR . '/' . NV_LANG_DATA . '_' . $module_data . 'Content.txt';
-            if( file_exists( $content_file ) )
-            {
-            	$bodytext = file_get_contents( $content_file );
-            }
-            $xtpl->assign('BODYTEXT', $bodytext);
+        $images_button = $row['images_button'];
+        $url = NV_BASE_SITEURL . "index.php?" . NV_LANG_VARIABLE . "=" . NV_LANG_DATA . "&amp;" . NV_NAME_VARIABLE . "=" . $module_name . "&amp;" . NV_OP_VARIABLE . "=recharge/" . $row['payment'];
+        if (!empty($pay_amount)) {
+            $url .= '&amp;amount=' . $pay_amount;
         }
-        else
-        {
-            $notice = sprintf($lang_module['searchok'], $all_page, $key);
-            //echo $key; exit();
+        if (!empty($pay_info)) {
+            $url .= '&amp;info=' . urlencode($pay_info);
         }
-    }
-    
-}
-if(empty($data))
-{
-    $notice = $lang_module['no_search'];
-}
 
+        if (!empty($images_button) and file_exists(NV_UPLOADS_REAL_DIR . "/" . $module_name . "/" . $images_button)) {
+            $images_button = NV_BASE_SITEURL . NV_UPLOADS_DIR . "/" . $module_name . "/" . $images_button;
+        }
 
-
-$generate_page = nv_generate_page( $base_url, $all_page, $module_config['per_page'], $page );
-$xtpl->assign( 'PAGE', $generate_page );
-
-$sql = "SELECT tendonvi, gt_dv FROM " . NV_PREFIXLANG . "_" . $module_data . "_donvi WHERE madvi = " . $madvi;
-$result = $db->query($sql);
-while( $row = $result->fetch())
-{
-    $xtpl->assign('GT_DV', $row['gt_dv']);
-    if($all_page == 0)
-    {
-        $notice = $lang_module['no_cb'] . "\"" .$row['tendonvi'] . "\"";
+        $url_checkout[] = [
+            'payment' => $row['payment'],
+            'name' => $row['paymentname'],
+            'url' => $url,
+            'images_button' => $images_button,
+            'guide' => $row['bodytext']
+        ];
     }
 }
 
-foreach( $data AS $cbdoan )
-{
-	if( empty( $cbdoan['avt'] ) )
-	{
-		$cbdoan['avt'] = NV_BASE_SITEURL . "themes/" . $module_info['template'] . "/images/cbdoan/no-image.jpg";
-	}
-	$cbdoan['ngsinh'] = nv_date( 'd/m/Y', $cbdoan['ngsinh'] );
-    $xtpl->assign('CBDOAN', $cbdoan);
-    
-
-	$xtpl->assign( 'DETAIL', NV_BASE_SITEURL . "index.php?" . NV_LANG_VARIABLE . "=" . NV_LANG_DATA . "&amp;" . NV_NAME_VARIABLE . "=" . $module_name  . "&amp;" . NV_OP_VARIABLE . "=detail/" . $cbdoan['id']."-".change_alias($cbdoan['hoten']));
-	
-            
-    //Bat tat dia chi tai toplip
-    if(!empty($cbdoan['diachi']))
-    {
-        $xtpl->parse( 'main.table.loop.toplip.diachi' );
-    }
-    
-    //Bat tat toplip
-    if( $module_config['toplip'] == 1 )
-    {
-        $xtpl->parse( 'main.table.loop.toplip' );
-    }
-    
-    $xtpl->parse( 'main.table.loop' );        
+// Chuyển đến trang nạp nếu chỉ có một cổng thanh toán
+if (sizeof($url_checkout) == 1) {
+    $url = current($url_checkout);
+    nv_redirect_location(str_replace('&amp;', '&', $url['url']));
 }
 
-if($all_page > 0)
-{
-    $xtpl->parse( 'main.table' );
+$array_replace = array(
+    'SITE_NAME' => $global_config['site_name'],
+    'SITE_DES' => $global_config['site_description'],
+    'SITE_EMAIL' => $global_config['site_email'],
+    'SITE_PHONE' => $global_config['site_phone'],
+    'USER_NAME' => $user_info['username'],
+    'USER_EMAIL' => $user_info['email'],
+    'USER_FULLNAME' => $user_info['full_name']
+);
+
+$payport_content = nv_unhtmlspecialchars($module_config[$module_name]['payport_content']);
+foreach ($array_replace as $index => $value) {
+    $payport_content = str_replace('[' . $index . ']', $value, $payport_content);
 }
 
-$xtpl->assign('NOTICE', $notice);  
-$xtpl->assign('THONGKE', $thongke);
-$xtpl->assign( 'ACTION', NV_BASE_SITEURL . "index.php?" . NV_LANG_VARIABLE . "=" . NV_LANG_DATA . "&amp;" . NV_NAME_VARIABLE . "=" . $module_name );
+$base_url = NV_BASE_SITEURL . "index.php?" . NV_LANG_VARIABLE . "=" . NV_LANG_DATA . "&amp;" . NV_NAME_VARIABLE . "=" . $module_name;
+$contents = nv_theme_wallet_main($url_checkout, $payport_content);
 
-$xtpl->parse( 'main' );
-$contents = $xtpl->text( 'main' );
-
-include ( NV_ROOTDIR . "/includes/header.php" );
-echo nv_site_theme( $contents );
-include ( NV_ROOTDIR . "/includes/footer.php" );
+include NV_ROOTDIR . '/includes/header.php';
+echo nv_site_theme($contents);
+include NV_ROOTDIR . '/includes/footer.php';
