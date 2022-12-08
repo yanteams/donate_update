@@ -8,7 +8,7 @@
 
 Xem chi tiết tại [Module Demo Site](https://yan.svuef.com/)
 
-# Hướng dãn cài đặt
+# Hướng dẫn cài đặt
 
 - Đầu tiên cần sử dụng Hosting hoặc Xampp tại Windows
 - Sau đó cài Nukeviet v4.x
