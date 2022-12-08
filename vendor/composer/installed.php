@@ -1,115 +1,232 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => '4.4.01',
-    'version' => '4.4.01.0',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'nukeviet/nukeviet',
+        'pretty_version' => '4.4.01',
+        'version' => '4.4.01.0',
+        'reference' => NULL,
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => NULL,
-    'name' => 'nukeviet/nukeviet',
-  ),
-  'versions' => 
-  array (
-    'and/oauth' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-        0 => '0.7.x-dev',
-      ),
-      'reference' => '700b769807affc1c5d04ec5a77be69a10a12e52b',
+    'versions' => array(
+        'and/oauth' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '700b769807affc1c5d04ec5a77be69a10a12e52b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../and/oauth',
+            'aliases' => array(
+                0 => '0.7.x-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'gregwar/cache' => array(
+            'pretty_version' => 'v1.0.13',
+            'version' => '1.0.13.0',
+            'reference' => '184cc341c25298ff7d584f86b55b6ca26626da4f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../gregwar/cache/Gregwar/Cache',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'gregwar/image' => array(
+            'pretty_version' => 'v2.0.28',
+            'version' => '2.0.28.0',
+            'reference' => 'c1390f5fafe2dfb4ba83a6c7bc56f75ea18c0311',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../gregwar/image/Gregwar/Image',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'kriswallsmith/buzz' => array(
+            'pretty_version' => '0.17.2',
+            'version' => '0.17.2.0',
+            'reference' => '0d7e985003f074fca0ceb00bf2f650d749ae9710',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../kriswallsmith/buzz',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'league/url' => array(
+            'pretty_version' => '3.3.5',
+            'version' => '3.3.5.0',
+            'reference' => '1ae2c3ce29a7c5438339ff6388225844e6479da8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/url',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'nukeviet/nukeviet' => array(
+            'pretty_version' => '4.4.01',
+            'version' => '4.4.01.0',
+            'reference' => NULL,
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'nyholm/psr7' => array(
+            'pretty_version' => '1.5.1',
+            'version' => '1.5.1.0',
+            'reference' => 'f734364e38a876a23be4d906a2a089e1315be18a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nyholm/psr7',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'paypal/rest-api-sdk-php' => array(
+            'pretty_version' => '1.14.0',
+            'version' => '1.14.0.0',
+            'reference' => '72e2f2466975bf128a31e02b15110180f059fc04',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paypal/rest-api-sdk-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'php-http/client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'php-http/httplug' => array(
+            'pretty_version' => 'v1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => '1c6381726c18579c4ca2ef1ec1498fdae8bdf018',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-http/httplug',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'php-http/message-factory' => array(
+            'pretty_version' => 'v1.0.2',
+            'version' => '1.0.2.0',
+            'reference' => 'a478cb11f66a6ac48d8954216cfed9aa06a501a1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-http/message-factory',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'php-http/promise' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => '4c4c1f9b7289a2ec57cde7f1e9762a5789506f88',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-http/promise',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'v6.7',
+            'version' => '6.7.0.0',
+            'reference' => '80fc8686fcd070267b98dae0ec228d5d67d94310',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-client' => array(
+            'pretty_version' => '0.1.0',
+            'version' => '0.1.0.0',
+            'reference' => 'd4d3ec04b034120b0591ad9722a4c2be33a7dfec',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-client',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-factory' => array(
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => '12ac7fcd07e5b077433f5f2bee95b3a771bf61be',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-factory',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-factory-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'psr/http-message' => array(
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => 'f6561bf28d520154e4b0ec72be95418abe6d9363',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-message',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-message-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'psr/log' => array(
+            'pretty_version' => '1.1.4',
+            'version' => '1.1.4.0',
+            'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/log',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/options-resolver' => array(
+            'pretty_version' => 'v4.4.44',
+            'version' => '4.4.44.0',
+            'reference' => '583f56160f716dd435f1cd721fd14b548f4bb510',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/options-resolver',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-mbstring' => array(
+            'pretty_version' => 'v1.18.1',
+            'version' => '1.18.1.0',
+            'reference' => 'a6977d63bf9a0ad4c65cd352709e230876f9904a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-php80' => array(
+            'pretty_version' => 'v1.27.0',
+            'version' => '1.27.0.0',
+            'reference' => '7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-php80',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tecnickcom/tc-lib-barcode' => array(
+            'pretty_version' => '1.17.14',
+            'version' => '1.17.14.0',
+            'reference' => '4907ef1e384dbb7d3100c897925e7dc071a419a3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tecnickcom/tc-lib-barcode',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tecnickcom/tc-lib-color' => array(
+            'pretty_version' => '1.14.14',
+            'version' => '1.14.14.0',
+            'reference' => 'f9e45c59496418227184626ad31e83470153c11f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tecnickcom/tc-lib-color',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'true/punycode' => array(
+            'pretty_version' => 'v2.1.1',
+            'version' => '2.1.1.0',
+            'reference' => 'a4d0c11a36dd7f4e7cd7096076cab6d3378a071e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../true/punycode',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'gregwar/cache' => 
-    array (
-      'pretty_version' => 'v1.0.13',
-      'version' => '1.0.13.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '184cc341c25298ff7d584f86b55b6ca26626da4f',
-    ),
-    'gregwar/image' => 
-    array (
-      'pretty_version' => 'v2.0.28',
-      'version' => '2.0.28.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'c1390f5fafe2dfb4ba83a6c7bc56f75ea18c0311',
-    ),
-    'kriswallsmith/buzz' => 
-    array (
-      'pretty_version' => 'v0.15',
-      'version' => '0.15.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd4041666c3ffb379af02a92dabe81c904b35fab8',
-    ),
-    'league/url' => 
-    array (
-      'pretty_version' => '3.3.5',
-      'version' => '3.3.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '1ae2c3ce29a7c5438339ff6388225844e6479da8',
-    ),
-    'nukeviet/nukeviet' => 
-    array (
-      'pretty_version' => '4.4.01',
-      'version' => '4.4.01.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
-    ),
-    'phpmailer/phpmailer' => 
-    array (
-      'pretty_version' => 'v6.5.1',
-      'version' => '6.5.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'dd803df5ad7492e1b40637f7ebd258fee5ca7355',
-    ),
-    'symfony/polyfill-mbstring' => 
-    array (
-      'pretty_version' => 'v1.18.1',
-      'version' => '1.18.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a6977d63bf9a0ad4c65cd352709e230876f9904a',
-    ),
-    'tecnickcom/tc-lib-barcode' => 
-    array (
-      'pretty_version' => '1.17.6',
-      'version' => '1.17.6.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a8a7183e2be6379e522dc825a3b7a3af5394a9e7',
-    ),
-    'tecnickcom/tc-lib-color' => 
-    array (
-      'pretty_version' => '1.14.6',
-      'version' => '1.14.6.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '83cdb57fd900901c6aa2af8cfd67202518fb69b2',
-    ),
-    'true/punycode' => 
-    array (
-      'pretty_version' => 'v2.1.1',
-      'version' => '2.1.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'a4d0c11a36dd7f4e7cd7096076cab6d3378a071e',
-    ),
-  ),
 );

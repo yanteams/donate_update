@@ -15,8 +15,8 @@ if (!defined('NV_MAINFILE')) {
 
 $db_config['dbhost'] = '127.0.0.1';
 $db_config['dbport'] = '';
-$db_config['dbname'] = 'donations';
-$db_config['dbsystem'] = 'donations';
+$db_config['dbname'] = 'donate';
+$db_config['dbsystem'] = 'donate';
 $db_config['dbuname'] = 'root';
 $db_config['dbpass'] = '';
 $db_config['dbtype'] = 'mysql';
@@ -28,7 +28,7 @@ $db_config['prefix'] = 'nv4';
 $global_config['site_domain'] = '';
 $global_config['name_show'] = 0;
 $global_config['idsite'] = 0;
-$global_config['sitekey'] = '0f46ec8a1c96e860b2993e9b738eccd7';// Do not change sitekey!
+$global_config['sitekey'] = 'cfcdda9b123d9d8d899a4cf681d66b6c';// Do not change sitekey!
 $global_config['hashprefix'] = '{SSHA512}';
 $global_config['cached'] = 'files';
 $global_config['session_handler'] = 'files';

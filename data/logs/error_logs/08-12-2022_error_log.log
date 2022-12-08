@@ -1,0 +1,113 @@
+[Thu, 08 Dec 2022 07:50:06 +0700] [localhost] [::1] [Notice(8): Undefined index: username] [FILE: /modules/wallet/funcs/main.php] [LINE: 76] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 07:50:06 +0700] [localhost] [::1] [Notice(8): Undefined index: email] [FILE: /modules/wallet/funcs/main.php] [LINE: 77] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 07:50:06 +0700] [localhost] [::1] [Notice(8): Undefined index: full_name] [FILE: /modules/wallet/funcs/main.php] [LINE: 78] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 08:44:55 +0700] [localhost] [::1] [Error(1): Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'money' in 'where clause' in C:\xampp\htdocs\donate\vendor\vinades\nukeviet\Core\Database.php:529
+Stack trace:
+#0 C:\xampp\htdocs\donate\vendor\vinades\nukeviet\Core\Database.php(529): PDO->query('SELECT MAX(crea...')
+#1 C:\xampp\htdocs\donate\modules\wallet\admin\statistics.php(163): NukeViet\Core\Database->query('SELECT MAX(crea...')
+#2 C:\xampp\htdocs\donate\admin\index.php(182): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown] [FILE: /vendor/vinades/nukeviet/Core/Database.php] [LINE: 529]
+[Thu, 08 Dec 2022 08:47:16 +0700] [localhost] [::1] [Notice(8): Trying to access array offset on value of type null] [FILE: /modules/wallet/payment/paypal.complete.php] [LINE: 155] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+#2  LINE: 50    FILE: /modules/wallet/funcs/complete.php
+
+[Thu, 08 Dec 2022 09:03:02 +0700] [localhost] [::1] [User Notice(1024): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'] [FILE: /modules/wallet/language/data_vi.php] [LINE: 54] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+#2  LINE: 22    FILE: /admin/modules/recreate_mod.php
+#3  LINE: 370   FILE: /admin/modules/functions.php
+#4  LINE: 54    FILE: /modules/wallet/language/data_vi.php
+
+[Thu, 08 Dec 2022 09:13:52 +0700] [localhost] [::1] [Notice(8): Undefined index: customer_company] [FILE: /modules/wallet/admin/transaction.php] [LINE: 114] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Thu, 08 Dec 2022 09:17:05 +0700] [localhost] [::1] [Notice(8): Undefined variable: customer_anonymous] [FILE: /modules/wallet/admin/transaction.php] [LINE: 327] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Thu, 08 Dec 2022 09:17:05 +0700] [localhost] [::1] [Notice(8): Undefined variable: customer_anonymous] [FILE: /modules/wallet/admin/transaction.php] [LINE: 328] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Thu, 08 Dec 2022 09:18:23 +0700] [localhost] [::1] [Notice(8): Undefined variable: customer_company] [FILE: /modules/wallet/admin/transaction.php] [LINE: 329] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Thu, 08 Dec 2022 09:27:46 +0700] [localhost] [::1] [Notice(8): Undefined index: customer_canhan] [FILE: /modules/wallet/theme.php] [LINE: 393] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+#2  LINE: 64    FILE: /modules/wallet/funcs/historyexchange.php
+
+[Thu, 08 Dec 2022 10:04:18 +0700] [localhost] [::1] [Notice(8): Undefined index: full_name] [FILE: /modules/wallet/funcs/recharge.php] [LINE: 350] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 10:04:18 +0700] [localhost] [::1] [Notice(8): Undefined index: email] [FILE: /modules/wallet/funcs/recharge.php] [LINE: 351] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 10:05:07 +0700] [localhost] [::1] [Notice(8): Undefined index: userid] [FILE: /modules/wallet/funcs/recharge.php] [LINE: 280] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 10:05:07 +0700] [localhost] [::1] [User Notice(1024): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 0, , '215512',
+                        'jfsahfk@gmail.com', '841263498', '8...' at line 7] [FILE: /vendor/vinades/nukeviet/Core/Database.php] [LINE: 130] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+#2  LINE: 322   FILE: /modules/wallet/funcs/recharge.php
+#3  LINE: 130   FILE: /vendor/vinades/nukeviet/Core/Database.php
+
+[Thu, 08 Dec 2022 10:07:15 +0700] [localhost] [::1] [Notice(8): Undefined index: userid] [FILE: /modules/wallet/funcs/historyexchange.php] [LINE: 38] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 10:07:55 +0700] [localhost] [::1] [Notice(8): Undefined index: full_name] [FILE: /modules/wallet/funcs/recharge.php] [LINE: 349] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 10:10:25 +0700] [localhost] [::1] [Notice(8): Undefined index: userid] [FILE: /modules/wallet/funcs/recharge.php] [LINE: 297] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 10:36:07 +0700] [localhost] [::1] [Notice(8): Undefined variable: xtpl] [FILE: /modules/wallet/funcs/total.php] [LINE: 18] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 10:36:07 +0700] [localhost] [::1] [Error(1): Uncaught Error: Call to a member function parse() on null in C:\xampp\htdocs\donate\modules\wallet\funcs\total.php:18
+Stack trace:
+#0 C:\xampp\htdocs\donate\index.php(364): require()
+#1 {main}
+  thrown] [FILE: /modules/wallet/funcs/total.php] [LINE: 18]
+[Thu, 08 Dec 2022 10:37:35 +0700] [localhost] [::1] [Notice(8): Undefined variable: xtpl] [FILE: /modules/wallet/funcs/total.php] [LINE: 19] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+
+[Thu, 08 Dec 2022 10:37:35 +0700] [localhost] [::1] [Error(1): Uncaught Error: Call to a member function parse() on null in C:\xampp\htdocs\donate\modules\wallet\funcs\total.php:19
+Stack trace:
+#0 C:\xampp\htdocs\donate\index.php(364): require()
+#1 {main}
+  thrown] [FILE: /modules/wallet/funcs/total.php] [LINE: 19]
+[Thu, 08 Dec 2022 10:42:14 +0700] [localhost] [::1] [Error(1): Uncaught ArgumentCountError: Too few arguments to function nv_wallet_history_exchange(), 0 passed in C:\xampp\htdocs\donate\modules\wallet\funcs\total.php on line 22 and exactly 4 expected in C:\xampp\htdocs\donate\modules\wallet\theme.php:386
+Stack trace:
+#0 C:\xampp\htdocs\donate\modules\wallet\funcs\total.php(22): nv_wallet_history_exchange()
+#1 C:\xampp\htdocs\donate\index.php(364): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown] [FILE: /modules/wallet/theme.php] [LINE: 386]
+[Thu, 08 Dec 2022 10:42:51 +0700] [localhost] [::1] [Notice(8): Undefined variable: weight] [FILE: /modules/menu/admin/rows.php] [LINE: 65] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Thu, 08 Dec 2022 10:42:51 +0700] [localhost] [::1] [Notice(8): Undefined variable: sort] [FILE: /modules/menu/admin/rows.php] [LINE: 66] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Thu, 08 Dec 2022 10:55:04 +0700] [localhost] [::1] [Error(1): Uncaught Error: Call to undefined function nv_show_list_total() in C:\xampp\htdocs\donate\modules\wallet\funcs\total.php:27
+Stack trace:
+#0 C:\xampp\htdocs\donate\index.php(364): require()
+#1 {main}
+  thrown] [FILE: /modules/wallet/funcs/total.php] [LINE: 27]
+[Thu, 08 Dec 2022 11:05:44 +0700] [localhost] [::1] [Notice(8): Undefined variable: module_data] [FILE: /modules/wallet/theme.php] [LINE: 109] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+#2  LINE: 27    FILE: /modules/wallet/funcs/total.php
+
+[Thu, 08 Dec 2022 11:05:44 +0700] [localhost] [::1] [Notice(8): Undefined variable: db] [FILE: /modules/wallet/theme.php] [LINE: 110] [TRACE:]
+#1  LINE: 364   FILE: /index.php
+#2  LINE: 27    FILE: /modules/wallet/funcs/total.php
+
+[Thu, 08 Dec 2022 11:05:44 +0700] [localhost] [::1] [Error(1): Uncaught Error: Call to a member function query() on null in C:\xampp\htdocs\donate\modules\wallet\theme.php:110
+Stack trace:
+#0 C:\xampp\htdocs\donate\modules\wallet\funcs\total.php(27): nv_show_list_total()
+#1 C:\xampp\htdocs\donate\index.php(364): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown] [FILE: /modules/wallet/theme.php] [LINE: 110]

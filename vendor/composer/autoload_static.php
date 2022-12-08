@@ -8,6 +8,7 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -17,10 +18,15 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\OptionsResolver\\' => 34,
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
+            'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'O' => 
@@ -29,6 +35,7 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
         ),
         'N' => 
         array (
+            'Nyholm\\Psr7\\' => 12,
             'NukeViet\\Module\\' => 16,
             'NukeViet\\Api\\' => 13,
             'NukeViet\\' => 9,
@@ -37,10 +44,20 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
         array (
             'League\\Url\\' => 11,
         ),
+        'H' => 
+        array (
+            'Http\\Promise\\' => 13,
+            'Http\\Message\\' => 13,
+            'Http\\Client\\' => 12,
+        ),
         'C' => 
         array (
             'Com\\Tecnick\\Color\\' => 18,
             'Com\\Tecnick\\Barcode\\' => 20,
+        ),
+        'B' => 
+        array (
+            'Buzz\\' => 5,
         ),
     );
 
@@ -49,9 +66,30 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
         array (
             0 => __DIR__ . '/..' . '/true/punycode/src',
         ),
+        'Symfony\\Polyfill\\Php80\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\OptionsResolver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/options-resolver',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (
@@ -60,6 +98,10 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
         'OAuth\\' => 
         array (
             0 => __DIR__ . '/..' . '/and/oauth/src',
+        ),
+        'Nyholm\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nyholm/psr7/src',
         ),
         'NukeViet\\Module\\' => 
         array (
@@ -77,6 +119,18 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
         array (
             0 => __DIR__ . '/..' . '/league/url/src',
         ),
+        'Http\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/promise/src',
+        ),
+        'Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+        ),
+        'Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/httplug/src',
+        ),
         'Com\\Tecnick\\Color\\' => 
         array (
             0 => __DIR__ . '/..' . '/tecnickcom/tc-lib-color/src',
@@ -85,9 +139,20 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
         array (
             0 => __DIR__ . '/..' . '/tecnickcom/tc-lib-barcode/src',
         ),
+        'Buzz\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kriswallsmith/buzz/lib',
+        ),
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PayPal' => 
+            array (
+                0 => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib',
+            ),
+        ),
         'G' => 
         array (
             'Gregwar\\Image' => 
@@ -99,17 +164,16 @@ class ComposerStaticInit261687c3e3cd870899aff0ad8589f210
                 0 => __DIR__ . '/..' . '/gregwar/cache',
             ),
         ),
-        'B' => 
-        array (
-            'Buzz' => 
-            array (
-                0 => __DIR__ . '/..' . '/kriswallsmith/buzz/lib',
-            ),
-        ),
     );
 
     public static $classMap = array (
+        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'PclZip' => __DIR__ . '/..' . '/vinades/pclzip/pclzip.lib.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

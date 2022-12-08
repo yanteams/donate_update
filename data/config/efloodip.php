@@ -14,6 +14,6 @@ if (!defined('NV_MAINFILE')) {
 }
 
 $array_except_flood_site = [];
-$array_except_flood_site['::1'] = ['ip6' => 1, 'mask' => "::1/0", 'begintime' => 1670257432, 'endtime' => 0];
+$array_except_flood_site['::1'] = ['ip6' => 1, 'mask' => "::1/0", 'begintime' => 1670398814, 'endtime' => 0];
 
 $array_except_flood_admin = [];
