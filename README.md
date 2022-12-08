@@ -15,7 +15,7 @@ Xem chi tiết tại [Module Demo Site](https://yan.svuef.com/)
 - Vào phần Releases, tải về nv4_module_donations.zip
 - Sau đó, copy folder modules, themes vào folder Nukeviet hoặc có thể cài trực tiếp tại phần admin 
 - Tiếp theo vào phần Admin của nukeviet và cài đặt module mới -> chọn module vừa copy -> thiếp lập hoặc (Trong mục quản lý modules -> Cài đặt đóng gói)
-- Khi cài đặt xong cần chỉnh sửa phần Cổng thanh toán, có thể thêm cổng khác.
+- Khi cài đặt xong cần cấu hình cổng thanh toán, có thể thêm cổng khác.
 
 # Tài liệu
 
