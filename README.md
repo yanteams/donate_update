@@ -10,7 +10,7 @@ Xem chi tiết tại [Module Demo Site](https://yan.svuef.com/)
 
 # Hướng dẫn cài đặt
 
-- Đầu tiên cần sử dụng Hosting hoặc Xampp tại Windows
+- Đầu tiên cần sử dụng Hosting hoặc Xampp tại Windows / Linux
 - Sau đó cài Nukeviet v4.x
 - Vào phần Releases, tải về nv4_module_donations.zip
 - Sau đó, copy folder modules, themes vào folder Nukeviet hoặc có thể cài trực tiếp tại phần admin 
