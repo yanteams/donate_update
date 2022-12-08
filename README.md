@@ -13,7 +13,7 @@ Xem chi tiết tại [Module Demo Site](https://yan.svuef.com/)
 - Đầu tiên cần sử dụng Hosting hoặc Xampp tại Windows
 - Sau đó cài Nukeviet v4.x
 - Vào phần Releases, tải về nv4_module_donations.zip
-- Sau đó, copy file modules, themes vào folder Nukeviet hoặc có thể cài trực tiếp tại phần admin 
+- Sau đó, copy folder modules, themes vào folder Nukeviet hoặc có thể cài trực tiếp tại phần admin 
 - Tiếp theo vào phần Admin của nukeviet và cài đặt module mới -> chọn module vừa copy -> thiếp lập hoặc (Trong mục quản lý modules -> Cài đặt đóng gói)
 - Khi cài đặt xong cần chỉnh sửa phần Cổng thanh toán, có thể thêm cổng khác.
 
