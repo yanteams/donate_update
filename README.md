@@ -19,7 +19,7 @@ Xem chi tiết tại [Module Demo Site](https://yan.svuef.com/).
 
 # Hướng dẫn cài đặt Paypal
 
-- Tạo tài khoản Sandbox Accounts [tại đây](https://github.com/nukeviet/module-wallet/wiki](https://developer.paypal.com/tools/sandbox/accounts).
+- Tạo tài khoản Sandbox Accounts [tại đây](https://developer.paypal.com/tools/sandbox/accounts).
 - Sau đó đăng nhập bằng tài khoản nhà phát triển vào trang PayPal’s Developer.
 - Sau khi đăng nhập, bạn sẽ được chuyển hướng đến trang các ứng dụng của tôi, ở đó bạn có thể tạo một ứng dụng mới [tại đây](https://developer.paypal.com/developer/applications/create).
 - Điền tên ứng dụng, chọn tài khoản Sandbox Business account Một khi các ứng dụng được tạo ra, bạn có thể nhận thấy Client id & Secret.
