@@ -1,8 +1,8 @@
 # Module quyên góp và quản lý quỹ tiền quyên góp. 
 
-- Chức năng nạp thêm tiền vào tài khoản thông qua các cổng thanh toán.
+- Chức năng quyên góp tiền thông qua các cổng thanh toán (Paypal, VNPay,...).
 
-- Chức năng nạp thêm tiền tài khoản (thủ công) thông qua quản trị website. 
+- Chức năng quyên góp (thủ công) thông qua quản trị website. 
 
 - Cho phép chuyển đổi tiền USD, tiền Việt Nam
 
