@@ -10,7 +10,7 @@ Xem chi tiết tại [Module Demo Site](https://yan.svuef.com/)
 
 # Tài liệu
 
-Để cổng thanh toán PayPal hoạt động cần cài đặt composer require paypal/rest-api-sdk-php:*
+Để cổng thanh toán PayPal hoạt động cần cài đặt *composer require paypal/rest-api-sdk-php:*
 
 Để bắt đầu mời các bạn tham khảo thông tin trên trang [wiki](https://github.com/nukeviet/module-wallet/wiki)
 
