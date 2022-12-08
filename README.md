@@ -34,4 +34,4 @@ Xem chi tiết tại [Module Demo Site](https://yan.svuef.com/).
 
 This module is released under GNU/GPL version 3 or any later version.
 
-See [LICENSE](https://github.com/ntk20102k2/donate_update/LICENSE) for the full license.
+See [LICENSE](https://github.com/ntk20102k2/donate_update/blob/main/LICENSE) for the full license.
