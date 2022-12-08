@@ -23,8 +23,8 @@ Xem chi tiết tại [Module Demo Site](https://yan.svuef.com/)
 
 Để bắt đầu mời các bạn tham khảo thông tin trên trang [wiki](https://github.com/nukeviet/module-wallet/wiki)
 
-#Licensing
+# Licensing
 
-NukeViet is released under GNU/GPL version 3 or any later version.
+This module is released under GNU/GPL version 3 or any later version.
 
 See [LICENSE](https://github.com/ntk20102k2/donate_update/LICENSE) for the full license.
